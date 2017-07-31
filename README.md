@@ -1,1 +1,1 @@
-# Project2---App
+# Series Junkie
