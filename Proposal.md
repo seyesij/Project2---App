@@ -14,4 +14,6 @@ This is an app for people who love to watch tv as much as I do! You can search f
 ## Phases of Completion
 
 ## Links and Resources
+- https://www.npmjs.com/package/tvmaze-node
+- http://www.tvmaze.com/api
 
