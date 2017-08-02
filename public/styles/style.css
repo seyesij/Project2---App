@@ -1,28 +1,40 @@
 body {
+  height: 100%;
   background: black;
 }
 
 h1 {
   font-size: 80px;
-  color: white;
+  color: #ffcc00;
   text-align: center;
 }
 
 h2 {
-  color: yellow;
-  font-size: 40px;
-  font-family: 'Fredoka One', cursive;
+  color: red;
+  font-size: 36px;
+  font-family: 'Amatic SC', cursive;
   text-align: center;
+  letter-spacing: 2px;
 }
+
 nav {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  background: silver;
+  justify-content: flex-end;
+  background: rgba(192,192,192,0.2) url("../images/logo.jpg") no-repeat top left;
+  background-size: 200px;
+  height: 80px;
+}
+
+.searchbox {
+    width: 300px;
+    height: 25px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
 }
 
 .navbar {
-
+  color: white;
 }
 
 .navbar:hover {
@@ -34,24 +46,27 @@ ul {
 }
 
 li {
+  font-family: 'BenchNine', sans-serif;
   display: inline-block;
   font-size: 25px;
   font-weight: bold;
 }
 
 .showindex {
+  margin: auto;
+  max-width: 1100px;
   background-color: black;
 }
 
 .show-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 img {
-  width: 270px;
-  height: 380px;
+  width: 235px;
+  height: 340px;
 }
 
 a {
@@ -66,7 +81,7 @@ a:hover {
 }
 
 .next {
-    background-color: yellow;
+    background-color: red;
     color: black;
 }
 
@@ -76,30 +91,54 @@ a:hover {
   margin: 30px 0;
 }
 
+.welcomecontainer{
+  min-height: 100vh;
+  position: relative;
+  background: black;
+}
+
 .welcome {
-  height: 100px;
+  height: 120px;
   background-image: url("../images/homepageimage.jpg");
+  opacity: 0.7;
+}
+
+.welcome2 {
+  height: 100px;
+  padding-bottom: 20px;
 }
 
 .welcome3 {
-  height: 100px;
+  height: 120px;
   background-image: url("../images/homepageimage.jpg");
+  opacity: 0.7;
 }
 
 .homepage {
-  margin: 70px 0;
   display: flex;
-  flex-direction: row;
+  height: 145px;
   justify-content: center;
+  padding: 30px;
+}
+
+.logbutton {
+   align-self: center;
 }
 
 button {
-  padding: 8px 18px;
+  padding: 5px 25px;
+  background-color: #ffcc00;
+  font-size: 15px;
 }
 
 .welcome4 {
-  height: 100px;
+  bottom: 0;
+  height: 120px;
+  left: 0;
+  position: absolute;
+  right: 0;
   background-image: url("../images/homepageimage.jpg");
+  opacity: 0.7;
 }
 
 .login-container {
