@@ -6,13 +6,14 @@ const showHelpers = require('../services/shows/show-helpers');
 const showsController = require('../controllers/shows-controller');
 
 showRoutes.get('/', showHelpers.getPopularShows, showsController.index);
-showRoutes.post('/', authHelpers.loginRequired, showsController.create);
 
-showRoutes.get('/add', authHelpers.loginRequired, (req, res) => {
-  res.render('shows/show-add', {
-    currentPage: 'add',
-  });
-});
+
+// showRoutes.post('/', authHelpers.loginRequired, showsController.create);
+// showRoutes.get('/add', authHelpers.loginRequired, (req, res) => {
+//   res.render('shows/show-add', {
+//     currentPage: 'add',
+//   });
+// });
 
 showRoutes.get('/:id', showsController.show);
 showRoutes.get('/:id/edit', authHelpers.loginRequired, showsController.edit);

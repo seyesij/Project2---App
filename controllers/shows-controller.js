@@ -8,11 +8,7 @@ showController.index = (req, res) => {
       res.render('shows/show-index', {
         currentPage: 'index',
         message: 'ok',
-        data: shows,
-        popularShows: {
-          title: res.locals.title,
-          image: res.locals.picture,
-        }
+        data: res.locals.show,
       });
     }).catch(err => {
       console.log(err);
@@ -34,19 +30,20 @@ showController.show = (req, res) => {
     });
 };
 
-showController.create = (req, res) => {
-  Show.create({
-    title: req.body.title,
-    category: req.body.category,
-    status: req.body.status,
-    description: req.body.description,
-  }, req.user.id).then(() => {
-    res.redirect('/shows');
-  }).catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  });
-};
+
+// showController.create = (req, res) => {
+//   Show.create({
+//     title: req.body.title,
+//     category: req.body.category,
+//     status: req.body.status,
+//     description: req.body.description,
+//   }, req.user.id).then(() => {
+//     res.redirect('/shows');
+//   }).catch(err => {
+//     console.log(err);
+//     res.status(500).json(err);
+//   });
+// };
 
 showController.update = (req, res) => {
   Show.update({
@@ -74,6 +71,7 @@ showController.edit = (req, res) => {
       res.status(500).json(err);
     });
 };
+
 
 showController.delete = (req, res) => {
   Show.destroy(req.params.id)
