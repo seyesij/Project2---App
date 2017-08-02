@@ -9,6 +9,7 @@ showController.index = (req, res) => {
         currentPage: 'index',
         message: 'ok',
         data: res.locals.show,
+        pageNumber: res.locals.page,
       });
     }).catch(err => {
       console.log(err);
