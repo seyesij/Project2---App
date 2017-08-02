@@ -1,0 +1,14 @@
+<% include ../partials/boilerplate %>
+<% include nav %>
+
+<h6>Can't find a show? Add it!</h6>
+<form method='POST' action='/shows'>
+  <input class='adding' name='title' type='text' placeholder='title' />
+  <input class='adding' name='genre' type='text' placeholder='genre' />
+  <input class='adding' name='country' type='text' placeholder='country' />
+  <input class='adding' name='network' type='text' placeholder='network' />
+  <input class='adding' name='image' type='text' placeholder='image' />
+  <input type='submit' value='Submit!' />
+</form>
+
+<% include ../partials/end %>
