@@ -2,7 +2,8 @@ require('isomorphic-fetch');
 // require('dotenv').config();
 
 function getPopularShows(req, res, next) {
-  let pageNumber = 1;
+
+  let pageNumber = req.query.page || 1;
   // const button = document.querySelector('.next');
   // button.addEventListener('click', () => {
   //   pageNumber++;
@@ -12,6 +13,7 @@ function getPopularShows(req, res, next) {
     .then(jsonRes => {
       //console.log(jsonRes.tv_shows);
       res.locals.show = jsonRes.tv_shows;
+      res.locals.page = pageNumber;
       return next();
     }).catch(err => {
       console.log(err);
