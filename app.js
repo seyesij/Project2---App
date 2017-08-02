@@ -1,3 +1,4 @@
+// import express from our dependencies
 const express = require('express');
 const logger = require('morgan');
 const path = require('path');
@@ -7,9 +8,12 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
 
+// initialize the app
 const app = express();
+// add our dotenv files
 require('dotenv').config();
 
+// middlewares
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
@@ -23,29 +27,45 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+// static files
 app.use(express.static('public'));
 
-app.set('view engine', 'ejs');
+// views
 app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`);
-})
-
-app.get('/', (req, res) => {
-  res.render('index');
+// set the port, either from an environmental variable or manually
+const port = process.env.PORT || 3000;
+// tell the app to listen on that particular port
+app.listen(port, () => {
+    console.log(`Listening on port ${port}`);
 });
-const showsRoutes = require('./routes/show-routes');
-app.use('/shows', showsRoutes);
+
+// index route
+app.get('/', (req, res) => {
+  res.render('index', {
+    currentPage: 'home',
+    documentTitle: 'Shows App!',
+    subTitle: 'SERIES JUNKIE',
+  });
+});
+
+// import show routes & tell the app to use them
+const showRoutes = require('./routes/show-routes');
+app.use('/shows', showRoutes);
 const authRoutes = require('./routes/auth-routes');
 app.use('/auth', authRoutes);
 const userRoutes = require('./routes/user-routes');
 app.use('/user', userRoutes);
 
-
-app.use('*', (req, res) => {
-  res.status(400).json({
-    message: 'Not found!',
-  });
+// Error handler!
+app.get('*', (req, res) => {
+    res.status(404).send('not found!');
 });
+
+
+
+
+
+
+

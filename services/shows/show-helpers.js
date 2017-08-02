@@ -13,7 +13,7 @@ function getPopularShows(req, res, next) {
       res.locals.country = jsonFetchRes.tv_shows.country;
       res.locals.network = jsonFetchRes.tv_shows.network;
       res.locals.status = jsonFetchRes.tv_shows.status;
-      res.locals.picture = jsonFetchRes.tv_shows.country.image_thumbnail_path
+      res.locals.picture = jsonFetchRes.tv_shows.image_thumbnail_path
       next();
     }).catch((err) => {
       console.log(err);
