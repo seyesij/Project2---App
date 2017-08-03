@@ -10,6 +10,7 @@ showController.index = (req, res) => {
         message: 'ok',
         data: res.locals.show,
         pageNumber: res.locals.page,
+        showName: res.locals.name,
       });
     }).catch(err => {
       console.log(err);
@@ -18,12 +19,13 @@ showController.index = (req, res) => {
 };
 
 showController.show = (req, res) => {
-  Show.findById(req.params.id)
+  Show.findById(req.query.q)
     .then(show => {
       res.render('shows/show-single', {
         currentPage: 'show',
         message: 'ok',
-        data: show,
+        data: res.locals.show,
+        showName: res.locals.name,
       });
     }).catch(err => {
       console.log(err);

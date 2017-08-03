@@ -10,8 +10,8 @@ h1 {
 }
 
 h2 {
-  color: red;
-  font-size: 36px;
+  background: -webkit-linear-gradient(#eee, #333);
+  font-size: 50px;
   font-family: 'Amatic SC', cursive;
   text-align: center;
   letter-spacing: 2px;
@@ -21,14 +21,16 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  background: rgba(192,192,192,0.2) url("../images/logo.jpg") no-repeat top left;
-  background-size: 200px;
+  background: rgba(192,192,192,0.2) url("../images/seriesjunkielogo.png") no-repeat top left;
+  opacity: 0.95;
+/*  border-radius: 30px;*/
+  background-size: 142px;
   height: 80px;
 }
 
 .searchbox {
     width: 300px;
-    height: 25px;
+    height: 20px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
@@ -142,8 +144,56 @@ button {
 }
 
 .login-container {
+  height: 100vh;
   display: flex;
+  justify-content: center;
+  border:2px solid red;
 }
+
+#loginpage {
+  align-self: center;
+}
+
+#registerpage {
+  align-self: center;
+}
+
+.login form, .register form {
+  width: 30vw;
+  padding: 30px;
+  box-sizing: border-box;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.loggingin {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.registering {
+  margin-top: 3px;
+  padding: 18px;
+  font-size: 16px;
+}
+
+
+.login form input[type=submit], .register form input[type=submit] {
+  background-color: red;
+  display: block;
+  margin: auto;
+  padding: 8px 12px;
+  font-size: 16px;
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 5px;
+}
+
+
 
 
 

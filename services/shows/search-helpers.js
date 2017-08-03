@@ -1,15 +1,15 @@
 require('isomorphic-fetch');
 // require('dotenv').config();
 
-function getPopularShows(req, res, next) {
-  let pageNumber = req.query.page || 1;
+function getSearchedShow(req, res, next) {
+  let showName = req.query.q;
 
-  fetch(`https://www.episodate.com/api/most-popular?page=${pageNumber}$`)
+  fetch(`https://www.episodate.com/api/search?q=${showName}$`)
     .then(fetchRes => fetchRes.json())
     .then(jsonRes => {
       //console.log(jsonRes.tv_shows);
       res.locals.show = jsonRes.tv_shows;
-      res.locals.page = pageNumber;
+      res.locals.name = showName;
       return next();
     }).catch(err => {
       console.log(err);
@@ -18,6 +18,8 @@ function getPopularShows(req, res, next) {
 }
 
 module.exports = {
-  getPopularShows,
+  getSearchedShow,
 }
 
+// https://www.episodate.com/api/search?q=:search&page=:page
+// https://www.episodate.com/api/search?q=arrow
