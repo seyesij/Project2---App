@@ -4,19 +4,11 @@ const User = require('../models/user.js');
 const usersController = {};
 
 usersController.index = (req, res) => {
-  console.log('userController');
-  User.findUserShows(req.user.id)
-    .then(shows => {
-        res.json({
-        user: req.user,
-        data: 'My Profile',
-        shows: shows,
-      });
-    }).catch(err => {
-      console.log(err);
-      res.status(500).json({err: err});
-    });
+  res.json({
+    user: req.user,
+  });
 }
+
 
 usersController.create = (req, res) => {
   const salt = bcrypt.genSaltSync();
@@ -30,7 +22,7 @@ usersController.create = (req, res) => {
   }).then(user => {
     req.login(user, (err) => {
       if (err) return next(err);
-      res.redirect('/shows/add');
+      res.redirect('/shows');
     });
   }).catch(err => {
     console.log(err);

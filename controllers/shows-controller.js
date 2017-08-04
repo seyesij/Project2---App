@@ -1,16 +1,13 @@
-const Show = require('../models/show');
+ const Show = require('../models/show');
 
 const showController = {};
 
 showController.index = (req, res) => {
-  Show.findAll()
+  Show.findUserShows(req.user.id)
     .then(shows => {
-      res.render('shows/show-index', {
-        currentPage: 'index',
+      res.render('user/myshows', {
         message: 'ok',
-        data: res.locals.show,
-        pageNumber: res.locals.page,
-        showName: res.locals.name,
+        data: shows,
       });
     }).catch(err => {
       console.log(err);
@@ -19,13 +16,11 @@ showController.index = (req, res) => {
 };
 
 showController.show = (req, res) => {
-  Show.findById(req.query.q)
+  Show.findById(req.params.id)
     .then(show => {
-      res.render('shows/show-single', {
-        currentPage: 'show',
+      res.render('user/myshows-single', {
         message: 'ok',
-        data: res.locals.show,
-        showName: res.locals.name,
+        data: show,
       });
     }).catch(err => {
       console.log(err);
@@ -33,29 +28,31 @@ showController.show = (req, res) => {
     });
 };
 
+showController.create = (req, res) => {
+  Show.create({
+    title: req.body.title,
+    genre: req.body.genre,
+    country: req.body.country,
+    network: req.body.network,
+    status: req.body.status,
+    }, req.user.id).then(() => {
+    res.redirect('/myshows');
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+};
 
-// showController.create = (req, res) => {
-//   Show.create({
-//     title: req.body.title,
-//     category: req.body.category,
-//     status: req.body.status,
-//     description: req.body.description,
-//   }, req.user.id).then(() => {
-//     res.redirect('/shows');
-//   }).catch(err => {
-//     console.log(err);
-//     res.status(500).json(err);
-//   });
-// };
 
 showController.update = (req, res) => {
   Show.update({
     title: req.body.title,
-    category: req.body.category,
+    genre: req.body.genre,
+    country: req.body.country,
+    network: req.body.network,
     status: req.body.status,
-    description: req.body.description,
   }, req.params.id).then(show => {
-    res.redirect(`/shows/${req.params.id}`);
+    res.redirect(`/myshows/${req.params.id}`);
   }).catch(err => {
     console.log(err);
     res.status(500).json(err);
@@ -65,8 +62,7 @@ showController.update = (req, res) => {
 showController.edit = (req, res) => {
   Show.findById(req.params.id)
     .then(show => {
-      res.render('shows/show-single-edit', {
-        currentPage: 'edit',
+      res.render('user/myshows-single-edit', {
         data: show,
       });
     }).catch(err => {
@@ -75,11 +71,10 @@ showController.edit = (req, res) => {
     });
 };
 
-
 showController.delete = (req, res) => {
   Show.destroy(req.params.id)
     .then(() => {
-      res.redirect('/shows');
+      res.redirect('/myshows');
     }).catch(err => {
       console.log(err);
       res.status(500).json(err);

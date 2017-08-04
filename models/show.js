@@ -2,9 +2,22 @@ const db = require('../db/config');
 
 const Show = {};
 
-Show.findAll = () => {
-  return db.query('SELECT * FROM shows');
-}
+// Show.findUserShows = (id) => {
+//    return db.manyOrNone(
+//     `SELECT shows.title, shows.genre, shows.country, shows.network, shows.status
+//     FROM shows
+//     JOIN users_shows ON shows.id = users_shows.show_id
+//     JOIN users ON users.id = users_shows.user_id
+//     WHERE users.id = $1`, [id]
+//     );
+// }
+
+Show.findUserShows = id => {
+  return db.manyOrNone(`
+    SELECT * FROM shows
+    WHERE user_id = $1
+  `, [id]);
+};
 
 Show.findById = (id) => {
   return db.oneOrNone(`
@@ -13,13 +26,13 @@ Show.findById = (id) => {
   `, [id]);
 }
 
-Show.create = (show) => {
+Show.create = (show, userid) => {
   return db.one(`
     INSERT INTO shows
-    (title, genre, country, network, status)
-    VALUES ($1, $2, $3, $4, $5)
+    (title, genre, country, network, status, user_id)
+    VALUES ($1, $2, $3, $4, $5, $6)
     RETURNING *
-  `, [show.title, show.genre, show.country, show.network, show.status]);
+  `, [show.title, show.genre, show.country, show.network, show.status, userid]);
 }
 
 Show.update = (show, id) => {

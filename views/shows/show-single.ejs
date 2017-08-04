@@ -1,16 +1,17 @@
 <% include ../partials/boilerplate %>
 <% include ../partials/nav %>
 
-<div class='showindex'>
-<h2><%= show.name %></h2>
+
+<div class='showsingle'>
 
   <div class='show-container'>
     <% for (let show of data) { %>
       <div class='show'>
-        <img src=<%= show.image_thumbnail_path %>>
-        <p><%= show.country %></p>
-        <p><%= show.network %></p>
-        <p><%= show.status %></p>
+        <h3><%= show.name %></h3>
+        <p id='imgp'><img src=<%= show.image_thumbnail_path %>><p>
+        <p id='p1'><span>Country:</span> <%= show.country %></p>
+        <p id='p2'><span>Network:</span> <%= show.network %></p>
+        <p id='p3'><span>Status:</span> <%= show.status %></p>
       </div>
     <% } %>
   </div>

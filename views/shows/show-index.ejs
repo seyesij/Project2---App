@@ -7,7 +7,9 @@
   <div class='show-container'>
     <% for (let show of data) { %>
       <div class='show'>
-        <img src=<%= show.image_thumbnail_path %>>
+        <a href='/shows/<%= show.name %>'>
+          <img src=<%= show.image_thumbnail_path %>>
+        </a>
       </div>
     <% } %>
   </div>

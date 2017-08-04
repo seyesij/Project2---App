@@ -1,0 +1,29 @@
+<% include ../partials/boilerplate %>
+<% include ../partials/nav %>
+
+<div class='myshows'>
+  <h2><a href='/myshows/add'>Add New Show!</a></h2>
+
+  <div class='myshow-container'>
+    <% for (let show of data) { %>
+      <div class='show'>
+        <h4><%= show.title %></h4>
+        <h4><%= show.genre %></h4>
+        <h4><%= show.country %></h4>
+        <h4><%= show.network %></h4>
+        <h4><%= show.status %></h4>
+        <div>
+          <a class='linkto' href='/myshows/<%= show.id %>'>Info</a>
+          <a class='linkto' href='/myshows/<%= show.id %>/edit'>Edit</a>
+          <form class='linkto' method='POST' action='/myshows/<%= show.id %>?_method=DELETE'>
+            <input type='submit' value='Delete' />
+          </form>
+        </div>
+      </div>
+    <% } %>
+  </div>
+</div>
+
+<% include ../partials/end %>
+
+

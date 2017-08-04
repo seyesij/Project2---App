@@ -26,3 +26,6 @@ CREATE TABLE IF NOT EXISTS users_shows
   user_id INT REFERENCES users(id),
   show_id INT REFERENCES shows(id)
 );
+
+ALTER TABLE shows
+ADD COLUMN user_id INTEGER REFERENCES users(id);

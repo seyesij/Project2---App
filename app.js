@@ -52,7 +52,9 @@ app.get('/', (req, res) => {
 
 // import show routes & tell the app to use them
 const showRoutes = require('./routes/show-routes');
-app.use('/shows', showRoutes);
+app.use('/myshows', showRoutes);
+const showsapiRoutes = require('./routes/showsapi-routes');
+app.use('/shows', showsapiRoutes);
 const authRoutes = require('./routes/auth-routes');
 app.use('/auth', authRoutes);
 const userRoutes = require('./routes/user-routes');
