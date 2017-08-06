@@ -3,8 +3,12 @@
 
 <div class='myprofile'>
   <h2>Profile</h2>
-<p> View Account Details </p>
-<p> <%= user %> </p>
+  <div class='accountlist'>
+    <p class='accpara'><span class='accspan'>Account Name:</span> <%= user.firstname %> <%= user.lastname %> </p>
+    <p class='accpara'><span class='accspan'>Account ID:</span> <%= user.id %> </p>
+    <p class='accpara'><span class='accspan'>Account Username:</span> <%= user.username %> </p>
+    <p class='accpara'><span class='accspan'>Account Email:</span> <%= user.email %> </p>
+  </ul>
 </div>
 
 <% include ../partials/end %>
