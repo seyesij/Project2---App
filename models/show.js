@@ -2,16 +2,6 @@ const db = require('../db/config');
 
 const Show = {};
 
-// Show.findUserShows = (id) => {
-//    return db.manyOrNone(
-//     `SELECT shows.title, shows.genre, shows.country, shows.network, shows.status
-//     FROM shows
-//     JOIN users_shows ON shows.id = users_shows.show_id
-//     JOIN users ON users.id = users_shows.user_id
-//     WHERE users.id = $1`, [id]
-//     );
-// }
-
 Show.findUserShows = id => {
   return db.manyOrNone(`
     SELECT * FROM shows

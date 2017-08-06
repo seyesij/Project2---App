@@ -4,14 +4,14 @@
 
 <div class='showsingle'>
 
-  <div class='show-container'>
+  <div class='showsingle-container'>
     <% for (let show of data) { %>
       <div class='show'>
         <h3><%= show.name %></h3>
         <p id='imgp'><img src=<%= show.image_thumbnail_path %>><p>
-        <p id='p1'><span>Country:</span> <%= show.country %></p>
-        <p id='p2'><span>Network:</span> <%= show.network %></p>
-        <p id='p3'><span>Status:</span> <%= show.status %></p>
+        <p id='p1'><span class='showsinglespan'>Country:</span> <%= show.country %></p>
+        <p id='p2'><span class='showsinglespan'>Network:</span> <%= show.network %></p>
+        <p id='p3'><span class='showsinglespan'>Status:</span> <%= show.status %></p>
       </div>
     <% } %>
   </div>

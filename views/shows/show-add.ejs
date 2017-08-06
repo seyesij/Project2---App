@@ -1,14 +1,18 @@
 <% include ../partials/boilerplate %>
 <% include ../partials/nav %>
 
-<h6>Add A New Show To Your List!</h6>
-<form method='POST' action='/myshows'>
-  <input class='adding' name='title' type='text' placeholder='title' />
-  <input class='adding' name='genre' type='text' placeholder='genre' />
-  <input class='adding' name='country' type='text' placeholder='country' />
-  <input class='adding' name='network' type='text' placeholder='network' />
-  <input class='adding' name='status' type='text' placeholder='status' />
-  <input type='submit' value='Submit!' />
-</form>
+<div id='addindex'>
+  <h2>ADD:</h2>
+    <div class='addpage-container'>
+      <form class='add' method='POST' action='/myshows'>
+        <input class='adding' name='title' type='text' placeholder='title' />
+        <input class='adding' name='genre' type='text' placeholder='genre' />
+        <input class='adding' name='country' type='text' placeholder='country' />
+        <input class='adding' name='network' type='text' placeholder='network' />
+        <input class='adding' name='status' type='text' placeholder='status' />
+        <input type='submit' value='Submit!' />
+      </form>
+    </div>
+</div>
 
 <% include ../partials/end %>

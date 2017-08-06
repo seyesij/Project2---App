@@ -2,20 +2,20 @@
 <% include ../partials/nav %>
 
 <div class='myshows'>
-  <h2><a href='/myshows/add'>Add New Show!</a></h2>
+  <h2>Favorite Shows</h2>
 
   <div class='myshow-container'>
+    <div id='addbut'><a id='myshowlink' href='/myshows/add'></a></div>
     <% for (let show of data) { %>
-      <div class='show'>
+      <div id='myshowdata' class='show'>
         <h4><%= show.title %></h4>
-        <h4><%= show.genre %></h4>
-        <h4><%= show.country %></h4>
-        <h4><%= show.network %></h4>
-        <h4><%= show.status %></h4>
-        <div>
-          <a class='linkto' href='/myshows/<%= show.id %>'>Info</a>
-          <a class='linkto' href='/myshows/<%= show.id %>/edit'>Edit</a>
-          <form class='linkto' method='POST' action='/myshows/<%= show.id %>?_method=DELETE'>
+        <p class='profileshows'><span class='profilespan'>Genre:</span> <%= show.genre %></p>
+        <p class='profileshows'><span class='profilespan'>Country:</span> <%= show.country %></p>
+        <p class='profileshows'><span class='profilespan'>Network:</span> <%= show.network %></p>
+        <p class='profileshows'><span class='profilespan'>Status:</span> <%= show.status %></p>
+        <div class='plink'>
+          <a class='profilelink' id='plink1' href='/myshows/<%= show.id %>/edit'>Edit</a>
+          <form class='profilelink' id='plink2' method='POST' action='/myshows/<%= show.id %>?_method=DELETE'>
             <input type='submit' value='Delete' />
           </form>
         </div>

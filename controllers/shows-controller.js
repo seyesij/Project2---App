@@ -18,7 +18,7 @@ showController.index = (req, res) => {
 showController.show = (req, res) => {
   Show.findById(req.params.id)
     .then(show => {
-      res.render('user/myshows-single', {
+      res.render('shows/show-single', {
         message: 'ok',
         data: show,
       });
@@ -62,7 +62,7 @@ showController.update = (req, res) => {
 showController.edit = (req, res) => {
   Show.findById(req.params.id)
     .then(show => {
-      res.render('user/myshows-single-edit', {
+      res.render('shows/show-single-edit', {
         data: show,
       });
     }).catch(err => {

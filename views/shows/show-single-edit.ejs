@@ -1,0 +1,15 @@
+<% include ../partials/boilerplate %>
+<% include ../partials/nav %>
+
+
+<form method='POST' action='/myshows/<%= data.id %>?_method=PUT'>
+  <input class='editing' name='title' type='text' value='<%= data.title %>' />
+  <input class='editing' name='genre' type='text' value='<%= data.genre%>' />
+  <input class='editing' name='country' type='text' value='<%= data.country %>' />
+  <input class='editing' name='network' type='text' value='<%= data.network %>' />
+  <input class='editing' name='status' type='text' value='<%= data.status %>' />
+  <input type='submit' value='Save' />
+</form>
+
+<% include ../partials/end %>
+

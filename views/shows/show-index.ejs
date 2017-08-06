@@ -3,11 +3,10 @@
 
 <div class='showindex'>
 <h2>POPULAR TV-SHOWS</h2>
-
   <div class='show-container'>
     <% for (let show of data) { %>
       <div class='show'>
-        <a href='/shows/<%= show.name %>'>
+        <a id='imglink' href='/shows/<%= show.name %>'>
           <img src=<%= show.image_thumbnail_path %>>
         </a>
       </div>
