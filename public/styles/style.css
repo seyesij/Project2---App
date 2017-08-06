@@ -30,67 +30,54 @@ nav {
   top: 0;
   width: 100%;
 }
-
 .searchbox {
     width: 300px;
-    height: 25px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
-
 .navbar {
   color: white;
 }
-
 .navbar:hover {
     color: rgb(204, 153, 0);
 }
-
 ul {
   height: 50px;
 }
-
 li {
   font-family: 'BenchNine', sans-serif;
   display: inline-block;
   font-size: 25px;
   font-weight: bold;
 }
-
 .showindex {
   margin: 120px auto auto auto;
   max-width: 1100px;
   background-color: white;
   line-height: 0px;
 }
-
 .show-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-
 img {
   width: 235px;
   height: 340px;
 }
-
 a {
     text-decoration: none;
     display: inline-block;
     padding: 8px 16px;
 }
-
 #imglink:hover {
     background-color: #d9d9d9;
 }
-
 .next {
     background-color: red;
     color: black;
     padding: 15px;
 }
-
 #nextpage {
   display: flex;
   justify-content: center;
@@ -122,26 +109,6 @@ a {
   background-image: url("../images/homepageimage.jpg");
   opacity: 0.7;
 }
-
-.homepage {
-  display: flex;
-  height: 145px;
-  justify-content: center;
-  padding: 30px;
-}
-
-
-/***Login and Register***/
-.logbutton {
-   align-self: center;
-}
-
-button {
-  padding: 5px 25px;
-  background-color: #ffcc00;
-  font-size: 15px;
-}
-
 .welcome4 {
   bottom: 0;
   height: 120px;
@@ -150,6 +117,23 @@ button {
   right: 0;
   background-image: url("../images/homepageimage.jpg");
   opacity: 0.7;
+}
+.homepage {
+  display: flex;
+  height: 145px;
+  justify-content: center;
+  padding: 30px;
+}
+button {
+  padding: 5px 25px;
+  background-color: #ffcc00;
+  font-size: 15px;
+}
+
+
+/***Login and Register***/
+.logbutton {
+   align-self: center;
 }
 
 .login-container {
@@ -207,6 +191,7 @@ button {
 /****View Api Show****/
 .showsingle {
   background: white;
+  padding-top: 80px;
 /*  line-height: 0px;*/
 }
 .showsingle-container {
@@ -244,12 +229,22 @@ h3 {
 /***************/
 
 
-
-
-/*.myprofile {
-  background-color: white;
-}*/
-
+/*****Profile****/
+.accountlist {
+  display: flex;
+  flex-direction: column;
+}
+.accspan {
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 20px;
+}
+.accpara {
+  font-size: 19px;
+}
+.myprofile {
+    margin-top: 100px;
+}
+/*************/
 
 
 /*MyShows */
@@ -336,28 +331,26 @@ h4 {
 /*************************/
 
 
-
-/******Add Page******/
-#addindex {
+/***Add/Edit Page***/
+#addindex, #singleedit {
     line-height: 0px;
     margin-top: 120px;
 }
 
-.addpage-container {
-  background: white;
+.addpage-container, .editpage-container  {
 /*  height: 100vh;*/
   display: flex;
   justify-content: center;
 }
 
-.adding {
+.adding, .editing {
   margin-top: 3px;
   padding: 18px;
   font-size: 16px;
   border: 1px solid black;
 }
 
-.add input[type=submit] {
+.add input[type=submit], .edit input[type=submit] {
   background-color: red;
   display: block;
   margin: auto;
@@ -370,7 +363,7 @@ h4 {
   margin-top: 5px;
 }
 
-.add {
+.add, .edit {
   width: 30vw;
   padding: 30px;
   box-sizing: border-box;
@@ -378,6 +371,118 @@ h4 {
   display: flex;
   flex-direction: column;
 }
+
+/**MOBILE**/
+@media only screen and (max-width: 1000px) {
+  h2 {
+  font-size: 40px;
+  letter-spacing: 0px;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: rgba(0, 0, 0, 1) url("../images/seriesjunkielogo.png")  repeat-x top;
+  background-size: 40px;
+  height: 100px;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+}
+.searchbox {
+    width: 300px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+ }
+li {
+  font-size: 20px;
+  font-weight: bold;
+}
+img {
+  width: 150px;
+  height: 200px;
+}
+.next {
+    background-color: red;
+    color: black;
+    padding: 10px;
+}
+h4 {
+  font-size: 13px;
+}
+.profileshows {
+  font-size: 16px;
+}
+.profilespan {
+  font-size: 18px;
+}
+#myshowdata {
+  width: 150px;
+  margin-bottom: 20px;
+}
+#myshowlink {
+  background-size: 120px;
+  width: 100px;
+}
+#plink1 {
+  padding: 2px 8px;
+  font-size: 13px;
+}
+#plink2 input[type=submit]  {
+  background-color: #1a1a1a;
+  margin: auto;
+  padding: 2px 7px;
+  font-size: 10px;
+}
+}
+
+@media only screen and (max-width: 800px) {
+.welcome {
+  height: 80px;
+  margin-bottom: 40px;
+}
+
+.welcome2 {
+  height: 80px;
+  padding-bottom: 20px;
+}
+
+.welcome3 {
+  height: 80px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+.welcome4 {
+  height: 80px;
+}
+h1 {
+  font-size: 40px;
+}
+h2 {
+  font-size: 30px;
+}
+button {
+  padding: 3px 0;
+  background-color: #ffcc00;
+  font-size: 12px;
+}
+h3 {
+  margin-bottom: 40px;
+  max-width: 160px;
+  height: 18px;
+  font-size: 18px;
+}
+#p1, #p2, #p3 {
+  font-size: 16px;
+  max-width: 160px;
+}
+.add, .edit {
+  width: 300px;
+}
+}
+
 
 
 
