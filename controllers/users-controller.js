@@ -4,7 +4,7 @@ const User = require('../models/user.js');
 const usersController = {};
 
 usersController.index = (req, res) => {
-  res.json({
+  res.render('user/myprofile', {
     user: req.user,
   });
 }
