@@ -1,4 +1,4 @@
-\c shows_app_dev;
+-- \c shows_app_dev;
 
 CREATE TABLE IF NOT EXISTS users
 (
