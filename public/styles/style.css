@@ -146,11 +146,43 @@ button {
 #loginpage, #registerpage {
    align-self: center;
 }
-.login-container {
-  height: 100vh;
+.register-container1 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background: black;
+}
+.register-container {
+  margin: auto;
+  height: 550px;
+  width: 500px;
   display: flex;
   justify-content: center;
-  border:2px solid red;
+  background: lightgrey;
+}
+.login-container1 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background: black;
+}
+.login-container {
+  margin: auto;
+  height: 400px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  background: lightgrey;
+}
+h5 {
+  font-family: 'Karla', sans-serif;
+  color: black;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 60px;
 }
 .login, .register {
   width: 30vw;
