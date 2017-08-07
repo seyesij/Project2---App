@@ -1,8 +1,9 @@
 require('isomorphic-fetch');
-// require('dotenv').config();
 
+//Get Shows from API
 function getPopularShows(req, res, next) {
   let pageNumber = req.query.page || 1;
+  //if user searches show search result
   if (req.query.search) {
       fetch(`https://www.episodate.com/api/search?q=${req.query.search}$`)
     .then(fetchRes => fetchRes.json())
@@ -15,6 +16,7 @@ function getPopularShows(req, res, next) {
       return next();
     })
   }
+  //else if user clicks on next button show next page
   fetch(`https://www.episodate.com/api/most-popular?page=${pageNumber}$`)
     .then(fetchRes => fetchRes.json())
     .then(jsonRes => {

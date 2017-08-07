@@ -6,7 +6,7 @@ const showHelpers = require('../services/showsapi/show-helpers');
 const searchHelpers = require('../services/showsapi/search-helpers');
 const showapiController = require('../controllers/showsapi-controller');
 
-//routes
+//All API routes
 showsapiRoutes.get('/', showHelpers.getPopularShows, showapiController.index);
 showsapiRoutes.get('/:id', searchHelpers.getSearchedShow, showapiController.show);
 

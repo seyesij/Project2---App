@@ -1,7 +1,7 @@
 const db = require('../db/config');
-
 const User = {};
 
+//find user by username
 User.findByUserName = userName => {
   return db.oneOrNone(`
     SELECT * FROM users
@@ -9,6 +9,7 @@ User.findByUserName = userName => {
   `, [userName]);
 };
 
+//create new user
 User.create = user => {
   return db.one(`
     INSERT INTO users
@@ -17,16 +18,6 @@ User.create = user => {
     RETURNING *
   `, [user.username, user.email, user.password_digest, user.firstname, user.lastname]);
 };
-
-// User.findUserShows = (id) => {
-//   return db.manyOrNone(
-//     `SELECT shows.title, shows.genre, shows.country, shows.network, shows.status
-//     FROM shows
-//     JOIN users_shows ON shows.id = users_shows.show_id
-//     JOIN users ON users.id = users_shows.user_id
-//     WHERE users.id = $1`, [id]
-//     );
-// };
 
 
 module.exports = User;

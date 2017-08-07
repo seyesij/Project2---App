@@ -1,7 +1,7 @@
 require('isomorphic-fetch');
 require('body-parser');
-// require('dotenv').config();
 
+//Search a show and get api results back
 function getSearchedShow(req, res, next) {
   let showName = req.params.id;
   fetch(`https://www.episodate.com/api/search?q=${showName}$`)

@@ -1,9 +1,11 @@
 const express = require('express');
 const showRoutes = express.Router();
+// import auth
 const authHelpers = require('../services/auth/auth-helpers');
-
+// import shows controller
 const showsController = require('../controllers/shows-controller');
 
+//All show routes
 showRoutes.get('/', authHelpers.loginRequired, showsController.index);
 showRoutes.post('/', authHelpers.loginRequired, showsController.create);
 

@@ -1,7 +1,7 @@
 const db = require('../db/config');
-
 const Show = {};
 
+//All Show Methods
 Show.findUserShows = id => {
   return db.manyOrNone(`
     SELECT * FROM shows
@@ -45,6 +45,7 @@ Show.destroy = (id) => {
   `, [id]);
 }
 
+//export model
 module.exports = Show;
 
 

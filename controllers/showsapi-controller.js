@@ -1,5 +1,3 @@
-// const Show = require('../models/show');
-
 const showapiController = {};
 
 showapiController.index = (req, res) => {
