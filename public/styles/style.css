@@ -241,10 +241,10 @@ h3 {
   font-size: 19px;
 }
 .myprofile {
-    height: 100%;
-    width: 100%;
-    background: red;
-    margin-top: 100px;
+    height: 500px;
+    width: 800px;
+    margin: 140px auto;
+    border: 3px solid black;
 }
 /*************/
 
@@ -476,6 +476,10 @@ h3 {
  .add, .edit, .login, .register {
   width: 300px;
  }
+ .myprofile {
+    height: 400px;
+    width: 500px;
+ }
 }
 
 @media only screen and (max-width: 514px) {
@@ -534,6 +538,10 @@ a.indexlink {
   align-items: center;
   height: 20px;
  }
+ .myprofile {
+    height: 400px;
+    width: 300px;
+}
 }
 
 
