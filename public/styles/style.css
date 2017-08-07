@@ -1,13 +1,12 @@
+html {
+  height: 100%;
+}
 body {
   height: 100%;
+  margin: 0;
   background: white;
 }
 
-h1 {
-  font-size: 80px;
-  color: #ffcc00;
-  text-align: center;
-}
 
 /*****Show Index******/
 h2 {
@@ -30,6 +29,11 @@ nav {
   top: 0;
   width: 100%;
 }
+#search_box input:focus {
+    outline: none;
+    border-color: red;
+    box-shadow: red;
+}
 .searchbox {
     width: 300px;
     -webkit-transition: width 0.4s ease-in-out;
@@ -39,7 +43,7 @@ nav {
   color: white;
 }
 .navbar:hover {
-    color: rgb(204, 153, 0);
+    color: red;
 }
 ul {
   height: 50px;
@@ -71,11 +75,11 @@ a {
     padding: 8px 16px;
 }
 #imglink:hover {
-    background-color: #d9d9d9;
+    background-color: darkred;
 }
 .next {
-    background-color: red;
-    color: black;
+    background-color: black;
+    color: white;
     padding: 15px;
 }
 #nextpage {
@@ -87,36 +91,37 @@ a {
 
 
 /****Enter Website****/
-.welcomecontainer{
-  min-height: 100vh;
-  position: relative;
+h1 {
+  margin: auto;
+  font-size: 80px;
+  color: #ffcc00;
+  text-align: center;
+  padding: 40px 45px;
+}
+.h1div {
+ align-self: center;
   background: black;
+  padding: 20px;
 }
-
+.welcomecontainer{
+  margin: 0;
+  background: url("../images/homepageimage.jpg") repeat;
+  background-size: 480px;
+  min-height: 100%;
+}
 .welcome {
-  height: 120px;
-  background-image: url("../images/homepageimage.jpg");
-  opacity: 0.7;
-}
-
-.welcome2 {
   height: 100px;
-  padding-bottom: 20px;
 }
-
+.welcome2 {
+  display: flex;
+  justify-content: center;
+  height: 200px;
+}
 .welcome3 {
-  height: 120px;
-  background-image: url("../images/homepageimage.jpg");
-  opacity: 0.7;
+  height: 100px;
 }
 .welcome4 {
-  bottom: 0;
-  height: 120px;
-  left: 0;
-  position: absolute;
-  right: 0;
-  background-image: url("../images/homepageimage.jpg");
-  opacity: 0.7;
+  height: 100px;
 }
 .homepage {
   display: flex;
@@ -129,28 +134,24 @@ button {
   background-color: #ffcc00;
   font-size: 15px;
 }
+.logbutton {
+  padding: 70px;
+  background: black;
+  align-self: center;
+}
+/********************/
 
 
 /***Login and Register***/
-.logbutton {
+#loginpage, #registerpage {
    align-self: center;
 }
-
 .login-container {
   height: 100vh;
   display: flex;
   justify-content: center;
   border:2px solid red;
 }
-
-#loginpage {
-  align-self: center;
-}
-
-#registerpage {
-  align-self: center;
-}
-
 .login, .register {
   width: 30vw;
   padding: 30px;
@@ -159,20 +160,18 @@ button {
   display: flex;
   flex-direction: column;
 }
-
 .loggingin {
   margin-top: 10px;
   padding: 10px;
   font-size: 16px;
+  border: 1px solid #8c8c8c;
 }
-
 .registering {
   margin-top: 3px;
   padding: 18px;
   font-size: 16px;
+  border: 1px solid #8c8c8c;
 }
-
-
 .login input[type=submit], .register input[type=submit] {
   background-color: red;
   display: block;
@@ -192,7 +191,6 @@ button {
 .showsingle {
   background: white;
   padding-top: 80px;
-/*  line-height: 0px;*/
 }
 .showsingle-container {
   display: flex;
@@ -217,7 +215,7 @@ h3 {
   font-size: 16px;
   margin-bottom: 5px;
   max-width: 250px;
-    font-weight: bold;
+  font-weight: bold;
 }
 .showsinglespan {
   padding-right: 5px;
@@ -233,6 +231,7 @@ h3 {
 .accountlist {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .accspan {
   font-family: 'Cabin Sketch', cursive;
@@ -254,7 +253,6 @@ h3 {
   background: white;
   text-align: center;
 }
-
 h4 {
   line-height: 0px;
   font-family: 'Kumar One', cursive;
@@ -262,29 +260,21 @@ h4 {
   font-size: 22px;
   text-transform: uppercase;
 }
-
 .profileshows {
   font-family: 'Cabin Sketch', cursive;
-  font-size: 18px;
+  font-size: 19px;
   color: #2f343d;
   text-align: center;
 }
-
 .profilespan {
   text-decoration: underline;
   font-size: 20px;
   color: #2f343d;
   font-weight: bolder;
 }
-
-.profilelink {
+.profilelink, #plink {
   display: inline;
 }
-
-#plink {
-  display: inline;
-}
-
 #plink1 {
   background-color: #1a1a1a;
   margin: auto;
@@ -296,7 +286,6 @@ h4 {
   transition: 0.3s;
   margin-top: 5px;
 }
-
 #plink2 input[type=submit]  {
   background-color: #1a1a1a;
   margin: auto;
@@ -308,19 +297,16 @@ h4 {
   transition: 0.3s;
   margin-top: 5px;
 }
-
 .myshow-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
-
 #myshowdata {
   background: -webkit-linear-gradient(left, rgba(255,0,0,0), rgba(255,0,0,1));
   width: 250px;
   margin-bottom: 20px;
 }
-
 #myshowlink {
   padding-top: 200px;
   background-image: url("../images/addbutton.png");
@@ -336,20 +322,16 @@ h4 {
     line-height: 0px;
     margin-top: 120px;
 }
-
 .addpage-container, .editpage-container  {
-/*  height: 100vh;*/
   display: flex;
   justify-content: center;
 }
-
 .adding, .editing {
   margin-top: 3px;
   padding: 18px;
   font-size: 16px;
   border: 1px solid black;
 }
-
 .add input[type=submit], .edit input[type=submit] {
   background-color: red;
   display: block;
@@ -362,7 +344,6 @@ h4 {
   transition: 0.3s;
   margin-top: 5px;
 }
-
 .add, .edit {
   width: 30vw;
   padding: 30px;
@@ -371,14 +352,18 @@ h4 {
   display: flex;
   flex-direction: column;
 }
+/************/
+
 
 /**MOBILE**/
 @media only screen and (max-width: 1000px) {
+.welcomecontainer {
+  background-size: 400px;
+}
   h2 {
   font-size: 40px;
   letter-spacing: 0px;
 }
-
 nav {
   display: flex;
   flex-direction: row;
@@ -405,12 +390,15 @@ img {
   height: 200px;
 }
 .next {
-    background-color: red;
-    color: black;
+    background-color: black;
+    color: white;
     padding: 10px;
 }
 h4 {
   font-size: 13px;
+}
+.myprofile, .myshows {
+  margin-top: 120px;
 }
 .profileshows {
   font-size: 16px;
@@ -439,30 +427,34 @@ h4 {
 }
 
 @media only screen and (max-width: 800px) {
+  .welcomecontainer {
+  background-size: 350px;
+}
 .welcome {
   height: 80px;
   margin-bottom: 40px;
 }
-
 .welcome2 {
   height: 80px;
   padding-bottom: 20px;
 }
-
 .welcome3 {
   height: 80px;
-  margin-bottom: 40px;
   margin-top: 40px;
 }
-.welcome4 {
-  height: 80px;
-}
 h1 {
-  font-size: 40px;
+  font-size: 60px;
+  padding: 20px 10px;
 }
 h2 {
   font-size: 30px;
 }
+.myprofile, .myshows {
+  margin-top: 120px;
+}
+.logbutton {
+  padding: 60px;
+  }
 button {
   padding: 3px 0;
   background-color: #ffcc00;
@@ -478,10 +470,70 @@ h3 {
   font-size: 16px;
   max-width: 160px;
 }
-.add, .edit {
+ .add, .edit, .login, .register {
   width: 300px;
+ }
 }
+
+@media only screen and (max-width: 514px) {
+.welcomecontainer {
+  background-size: 300px;
 }
+  h1 {
+  font-size: 28px;
+  padding: 40px 20px;
+}
+.myprofile, .myshows {
+  margin-top: 120px;
+}
+button {
+  margin: 0px;
+  padding: 0px;
+  font-size: 12px;
+  width: 70px;
+  height: 8vh;
+  text-transform: lowercase;
+}
+a.indexlink {
+  width: 50%;
+  text-align: center;
+}
+ .add, .edit, .login, .register {
+  width: 250px;
+ }
+ .login input[type=submit], .register input[type=submit] {
+  padding: 3px 8px;
+  font-size: 10px;
+  margin-top: 5px;
+ }
+.loggingin, .registering {
+  padding: 10px;
+  font-size: 12px;
+ }
+ .welcome {
+  height: 100px;
+  margin-bottom: 20px;
+}
+.welcome2 {
+  height: 60px;
+  padding-bottom: 20px;
+}
+.welcome3 {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.welcome4 {
+ }
+ .logbutton {
+  padding: 70px 40px;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+ }
+}
+
+
 
 
 
