@@ -1,4 +1,5 @@
 # Series Junkie
+https://seriesjunkie.herokuapp.com/
 
 ![Image of Screenshot](https://github.com/seyesij/Project2-App/blob/master/appscreenshot.png)
 
